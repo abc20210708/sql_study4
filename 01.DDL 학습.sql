@@ -48,6 +48,41 @@ ADD CONSTRAINT fk_reply_bno
 FOREIGN KEY(BNO)
 REFERENCES BOARD (BNO);
 
+--컬럼 변경
+ALTER TABLE BOARD
+ADD(view_count NUMBER(10) DEFAULT 0 NOT NULL);
+--기본값이 0
+
+ALTER TABLE BOARD
+MODIFY (title VARCHAR2(400));
+
+ALTER TABLE BOARD
+DROP COLUMN view_count;
+
+--테이블 삭제
+DROP TABLE REPLY;
+--복구가 안 됨!/정말 위험/복구 힘들어요
+DROP TABLE BOARD;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
