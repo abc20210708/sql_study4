@@ -36,7 +36,7 @@ FROM tb_emp;
 --부서별로 가장 어린사람의 생일
 --가장 연장자의 생일
 --부서별 총 직원수를 조회
-SELECT emp_nm,dept_cd,bi FROM tb_emp ORDER BY dept_cd;
+SELECT emp_nm, dept_cd, birth_de FROM tb_emp ORDER BY dept_cd;
 
 SELECT 
     dept_cd
