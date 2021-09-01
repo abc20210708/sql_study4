@@ -126,7 +126,7 @@ WHERE EXISTS (
 
 SELECT
     A.emp_no, A.emp_nm
-    ,(SELECT dept_nm FROM tb_dept
+    ,(SELECT dept_nm FROM tb_dept B
     WHERE A.dept_cd = B.dept_cd) AS dept_nm
     --연관 서브쿼리
     ,A.addr, A.birth_de
@@ -139,7 +139,7 @@ FROM tb_emp A
 SELECT
     B.emp_no, B.emp_nm, A.pay_avg
 FROM (
-    SELECT AVG(pay_amt) AS pay_avg
+    SELECT emp_no, AVG(pay_amt) AS pay_avg
     FROM tb_sal_his
     GROUP BY emp_no
     ) A, tb_emp B
